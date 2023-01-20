@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScrip Tutorial</title>
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <h1> Welcome to java script Tutorial</h1>
-    <div class="container">
-        <button id="click">Click me</button>
-    </div>
+    <header>
+        <nav>
+            <div class ="array_input">
+                <p>Length of the array</p>
+                <input id="array_length" type= "range" min = 5 max=100 step=1 value=50>
+                <p> Select Speed:</p>
+                <input id = "algorithm_speed" type ="range" min= 1 max = 5 step = 1 value = 2>
+                <button id = "reset_array">Generate New Array</button>
+            </div>
 
-    <script src="index.js"></script>
+            <div class="right_header">
+                <p class = "navigation_heading">Sorting Algorithms Visualizer</p>
 
+                <div class ="algorithms">
+                    <Button>Merge</Button>
+                    <Button>Quick</Button>
+                    <Button>Selection</Button>
+                    <Button>Insertion</Button>
+                    <Button>Bubble</Button>
+                    <Button>Heap</Button>
 
+                </div>
+
+            </div>
+        </nav>
+    </header>
     
 </body>
-
 </html>
