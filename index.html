@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+    *****************
+    DONE BY:-   TUMMALA KETHAN
+    *****************
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="array-inputs">
+                <p>Size of the array:</p>
+                <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                <p>Speed of the algorithm:</p>
+                <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                <button id="a_generate">Generate New Array!</button>
+            </div>
+
+            <div class="header_right">
+                <p class="nav-heading">Sorting visualizer</p>
+
+                <div class="algos">
+                    <button >Bubble</button>
+                    <button >Selection</button>
+                    <button >Insertion</button>
+                    <button >Merge</button>
+                    <button >Quick</button>
+                    <button >Heap</button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <footer>
+        <div class="container">
+
+            <button type="Submit" class = "complexity_button" onclick="openPopup()">Complexities</button>
+            <div class="popup" id="popup">
+                <img src="/css/images/complexity.png">
+               
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    
+    
+    
+    
+    <script>
+        let popup= document.getElementById("popup");
+    
+        function openPopup(){
+    
+            popup.classList.add("open-popup");
+    
+        }
+    
+        function closePopup(){
+            popup.classList.remove("open-popup");
+          
+    
+    }
+      
+    </script>
+    </footer>
+
+    <section>   
+
+        <div id="array_container">
+            
+        </div>
+
+       
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script src="./scripts/main.js"></script>   <!--This should be at the end of body and should be loaded before sorts.js-->
+    <script src="/scripts/visualizations.js"></script>
+    
+</body>
+
+
+</html>
