@@ -6,6 +6,7 @@
 -->
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
+
 <body>
 
     <header>
@@ -30,12 +32,12 @@
                 <p class="nav-heading">Sorting visualizer</p>
 
                 <div class="algos">
-                    <button >Bubble</button>
-                    <button >Selection</button>
-                    <button >Insertion</button>
-                    <button >Merge</button>
-                    <button >Quick</button>
-                    <button >Heap</button>
+                    <button>Bubble</button>
+                    <button>Selection</button>
+                    <button>Insertion</button>
+                    <button>Merge</button>
+                    <button>Quick</button>
+                    <button>Heap</button>
                 </div>
             </div>
 
@@ -45,58 +47,104 @@
     <footer>
         <div class="container">
 
-            <button type="Submit" class = "complexity_button" onclick="openPopup()">Complexities</button>
+            <button type="Submit" class="complexity_button" onclick="openPopup()">Complexities</button>
             <div class="popup" id="popup">
                 <img src="/css/images/complexity.png">
-               
-                <button type="button" onclick="closePopup()">OK</button>
+
+                <div id="Info_Cont1">
+
+                    <h2 class="time_complexity">TIME COMPLEXITY</h2>
+
+                    <div class="Complexity_Containers" id="Time_Complexity_Types_Container">
+
+                        <div class="Pair_Definitions">
+                            <p class="Sub_Heading" color="white">Worst case:</p>
+                            <p id="Time_Worst"></p>
+                        </div>
+
+                        <div class="Pair_Definitions">
+                            <p class="Sub_Heading">Average case:</p>
+                            <p id="Time_Average"></p>
+                        </div>
+
+                        <div class="Pair_Definitions">
+                            <p class="Sub_Heading">Best case:</p>
+                            <p id="Time_Best"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div id="Info_Cont2">
+
+                    <h3 class="space_complexity">SPACE COMPLEXITY</h3>
+
+                    <div class="Complexity_Containers" id="Space_Complexity_Types_Container">
+
+                        <div class="Pair_Definitions">
+                            <p class="Sub_Heading">Worst case:</p>
+                            <p id="Space_Worst"></p>
+                        </div>
+                        
+                    </div>
+                    <button type="button" onclick="closePopup()">OK</button>
+                </div>
+
+
+                
             </div>
         </div>
-    
-    
-    
-    
-    <script>
-        let popup= document.getElementById("popup");
-    
-        function openPopup(){
-    
-            popup.classList.add("open-popup");
-    
-        }
-    
-        function closePopup(){
-            popup.classList.remove("open-popup");
-          
-    
-    }
-      
-    </script>
 
-    
+
+
+
+        <script>
+            let popup = document.getElementById("popup");
+
+            function openPopup() {
+
+                popup.classList.add("open-popup");
+
+            }
+
+            function closePopup() {
+                popup.classList.remove("open-popup");
+
+
+            }
+
+        </script>
+
+
     </footer>
 
-    <section>   
+    <section>
 
         <div id="array_container">
-            
+
         </div>
 
-       
+
     </section>
 
     <footer>
 
     </footer>
 
-    <script src="./scripts/main.js"></script>   <!--This should be at the end of body and should be loaded before sorts.js-->
+    <script src="./scripts/main.js"></script>
+    <!--This should be at the end of body and should be loaded before sorts.js-->
     <script src="./scripts/visualizations.js"></script>
     <script src="./scripts/merge.js"></script>
     <script src="./scripts/bubble.js"></script>
     <script src="./scripts/selection.js"></script>
     <script src="./scripts/quick.js"></script>
     <script src="./scripts/heap.js"></script>
-    
+    <script src="./scripts/insertion.js"></script>
+
+
 </body>
 
 
