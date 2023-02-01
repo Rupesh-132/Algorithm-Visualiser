@@ -1,52 +1,67 @@
+function Merge()
+{
+    //Setting Time complexities
+    //document.getElementById("Time_Worst").innerText="O(N log N)";
+   // document.getElementById("Time_Average").innerText="Θ(N log N)";
+   // document.getElementById("Time_Best").innerText="Ω(N log N)";
 
+    //Setting Space complexity
+    //document.getElementById("Space_Worst").innerText="O(N)";
 
-// this function is called when we click the button in the app
+    c_delay=0;
 
-function Merge(){
-    c_delay = 0;
     merge_partition(0,array_size-1);
+
     enable_buttons();
 }
 
-// function for merging two sorted arrays
+function merge_sort(start,mid,end)
+{
+    var p=start,q=mid+1;
 
-function merge_sort(start,mid,end){
+    var Arr=[],k=0;
 
-    var left = start;
-    var right = mid+1;
-    var Arr = [],k=0;
-
-    for(var i=start;i<=end;i++){
-        if(left>mid){
-            Arr[k++] = div_sizes[right++];
-            div_update(divs[right-1],div_sizes[right-1],"red");
-        }else if(right>end){
-
-            Arr[k++] = div_sizes[left++];
-            div_update(divs[left-1],div_sizes[left-1],"red");
-
-
-        }else if(div_sizes[left]<div_sizes[right]){
-
+    for(var i=start; i<=end; i++)
+    {
+        if(p>mid)
+        {
+            Arr[k++]=div_sizes[q++];
+            div_update(divs[q-1],div_sizes[q-1],"red");//Color update
+        }
+        else if(q>end)
+        {
+            Arr[k++]=div_sizes[p++];
+            div_update(divs[p-1],div_sizes[p-1],"red");//Color update
+        }
+        else if(div_sizes[p]<div_sizes[q])
+        {
+            Arr[k++]=div_sizes[p++];
+            div_update(divs[p-1],div_sizes[p-1],"red");//Color update
+        }
+        else
+        {
+            Arr[k++]=div_sizes[q++];
+            div_update(divs[q-1],div_sizes[q-1],"red");//Color update
         }
     }
-}
 
-// taking array input with indexes start and end
-function merge_partition(start,end)
-{
-    if(start<end)
+    for(var t=0;t<k;t++)
     {
-        var mid = Math.floor(start+(end-start)/2);
-        div_update(divs[mid],div_sizes[mid],"yellow");// updating color upto to the mid size of arrays in each function call
-        
-
-        
-        merge_partition(start,mid);
-        merge_partition(mid+1,end);
-        merge_sort(start,mid,end);
+        div_sizes[start++]=Arr[t];
+        div_update(divs[start-1],div_sizes[start-1],"green");//Color update
     }
 }
-{
 
+function merge_partition(start,end)
+{
+    if(start < end)
+    {
+        var mid=Math.floor((start + end) / 2);
+        div_update(divs[mid],div_sizes[mid],"yellow");//Color update
+
+        merge_partition(start,mid);
+        merge_partition(mid+1,end);
+
+        merge_sort(start,mid,end);
+    }
 }

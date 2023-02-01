@@ -31,11 +31,11 @@ function visualize_speed()
 
     // decrease numerator to increase speed
 
-    delay_time = 1000/(Math.floor(array_size/10)*speed);
+    delay_time = 100000/(Math.floor(array_size/10)*speed);
 }
 
 
-var delay_time=1000/(Math.floor(array_size/10)*speed);        //Decrease numerator to increase speed.
+var delay_time=100000/(Math.floor(array_size/10)*speed);        //Decrease numerator to increase speed.
 var c_delay=0;//This is updated ov every div change so that visualization is visible.
 
 
@@ -44,7 +44,7 @@ var c_delay=0;//This is updated ov every div change so that visualization is vis
 function div_update(cont,height,color)
 {
     window.setTimeout(function(){
-        cont.style=" margin:0% " + margin_size + "%; width:" + (100/array_size-(2*margin_size)) + "%; height:" + height + "%; background-color:" + color + ";";
+        cont.style=" margin:0% " + margin_size + "%; width:" + (100/array_size-0.1) + "%; height:" + height + "%; background-color:" + color + ";";
     },c_delay+=delay_time);
 }
 
